@@ -1,0 +1,23 @@
+<div class="container mt-3 ">
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col-md-4 rounded shadow p-4">
+            <h2 class="h2 text-primary text-center">{{isRegistermode?'Register':'Login'}}</h2>
+            <form (ngSubmit)="onsubmit(f)" #f="ngForm">
+                <div class="mt-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="text" class="form-control" ngModel name="Email" required email #emailinput="ngModel">
+                    <span *ngIf="emailinput.invalid && emailinput.touched" class="text-danger">Email Address is required</span>
+                </div>
+                <div class="mt-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" ngModel name="Password" required #passinput="ngModel">
+                    <span *ngIf="passinput.invalid && passinput.touched" class="text-danger">Password is required</span>
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-success text-center mt-2" style="width: 100%;" [disabled]="!f.valid">{{isRegistermode?'Register':'Login'}}</button>
+                    <button class="btn btn-primary text-center mt-2" style="width: 100%;"  (click)="ontoggle()">{{!isRegistermode?'Register':'Login'}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

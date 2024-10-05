@@ -1,0 +1,7 @@
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let products of products">
+        <app-product-card [product]="products" *ngIf="visibiity"></app-product-card>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,8 @@
+<div class="card mt-3">
+    <div class="card-header">{{product.name}}</div>
+    <img [src]="product.imageUrl" style="height: 250px;">
+    <div class="card-body">
+        <button class="btn btn-info" style="width: 100%;" (click)="details()">Details</button>
+    </div>
+    <div class="card-footer">${{product.price}}</div>
+</div>
