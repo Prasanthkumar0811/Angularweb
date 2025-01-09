@@ -27,7 +27,7 @@ export class FormComponent {
   }
   onsubmit(){
     if(!this.isEditmode){
-      this.id=Math.random().toString();
+      this.product.id=Math.random().toString();
       this.productservice.addproducts(this.product);
       this.product={id:'',name:'',brand:'',price:'',imageUrl:'',manufacturedYear:''}
       this.router.navigateByUrl(`/`)

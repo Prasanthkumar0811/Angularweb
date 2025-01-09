@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Iuser } from '../model/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-auth',
@@ -11,6 +12,8 @@ export class UserAuthComponent {
   isRegistermode:boolean=false
   user:Iuser={Email:'',Password:''}
 
+  constructor(private route:Router){}
+
   ontoggle(){
     this.isRegistermode=!this.isRegistermode;
   }
@@ -19,6 +22,12 @@ export class UserAuthComponent {
      this.user.Password=form.value.Password
      console.log(this.user)
 
+  }
+  login(){
+    setTimeout(()=>{
+      this.route.navigateByUrl('/')
+      alert("Login Successfully")
+    },500)
   }
 
 }

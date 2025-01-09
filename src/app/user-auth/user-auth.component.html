@@ -14,10 +14,11 @@
                     <span *ngIf="passinput.invalid && passinput.touched" class="text-danger">Password is required</span>
                 </div>
                 <div class="mt-3">
-                    <button class="btn btn-success text-center mt-2" style="width: 100%;" [disabled]="!f.valid">{{isRegistermode?'Register':'Login'}}</button>
-                    <button class="btn btn-primary text-center mt-2" style="width: 100%;"  (click)="ontoggle()">{{!isRegistermode?'Register':'Login'}}</button>
+                    <button class="btn btn-success text-center mt-2" style="width: 100%;" [disabled]="!f.valid" (click)="login()">{{isRegistermode?'Register':'Login'}}</button>
                 </div>
             </form>
+            <button class="btn btn-primary text-center mt-2" style="width: 100%;"  (click)="ontoggle()">{{!isRegistermode?'Register':'Login'}}</button>
+
         </div>
     </div>
 </div>
